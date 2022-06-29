@@ -1,0 +1,17 @@
+{
+    "name": "M127.animtools.vrc",
+    "references": [
+        "GUID:88604be63167a38438d9265baed0ded8",
+        "GUID:3456780c4fb2d324ab9c633d6f1b0ddb",
+        "GUID:5718fb738711cd34ea54e9553040911d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

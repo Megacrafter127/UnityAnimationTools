@@ -1,0 +1,17 @@
+{
+  "name": "net.m127.animtools.vrc",
+  "version": "1.0.0",
+  "displayName": "Mega's Animation Tools VRC Extensions",
+  "description": "Tools to more easily fix up animations on VRChat Avatars.",
+  "unity": "2019.4",
+  "author": {
+    "name": "M127",
+    "email": "Megacrafter127@web.de"
+  },
+  "hideInEditor": "false",
+  "keywords": [],
+  "dependencies": {
+    "net.m127.animtools.core": "1.0.0",
+    "com.vrchat.avatars": "3.0.9"
+  }
+}
