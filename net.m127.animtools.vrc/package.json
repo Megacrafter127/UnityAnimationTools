@@ -8,7 +8,7 @@
     "name": "M127",
     "email": "Megacrafter127@web.de"
   },
-  "hideInEditor": "false",
+  "hideInEditor": false,
   "keywords": [],
   "url": "https://github.com/Megacrafter127/UnityAnimationTools.git?path=/net.m127.animtools.vrc#1.0.0",
   "gitDependencies":{
