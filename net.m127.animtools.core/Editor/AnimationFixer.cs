@@ -44,6 +44,7 @@ namespace M127
         public static void MenuClick()
         {
             AnimationFixer w = GetWindow<AnimationFixer>();
+            w.titleContent = new GUIContent("Animation Fixer");
             w.Show();
         }
 

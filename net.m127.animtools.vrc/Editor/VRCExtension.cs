@@ -35,7 +35,7 @@ namespace M127
         static VRCExtension()
         {
             AnimationFixer.RegisterExtension("VRC Extension: Recognizes animations in use on avatar descriptors.", null, ParseVRCAvatarDescriptor);
-            AnimationFixer.RegisterExtension("DynBone to PhysBone: Allows converting animation references to Dynamic Bones into references to PhysBones", new Dictionary<Type, (Type, Func<string, string>)> { [DynBoneType] = (typeof(VRCPhysBone), AnimationFixer.Identity) }, null);
+            if(DynBoneType != null) AnimationFixer.RegisterExtension("DynBone to PhysBone: Allows converting animation references to Dynamic Bones into references to PhysBones", new Dictionary<Type, (Type, Func<string, string>)> { [DynBoneType] = (typeof(VRCPhysBone), AnimationFixer.Identity) }, null);
         }
     }
 }
