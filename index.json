@@ -1,6 +1,7 @@
 {
   "name": "Mega's Animation Tools Repository",
   "author": "Megacrafter127",
+  "url": "https://raw.githubusercontent.com/Megacrafter127/UnityAnimationTools/master/index.json",
   "packages": {
     "net.m127.animtools.core": {
       "versions": {
@@ -37,6 +38,23 @@
           "dependencies": {
             "com.unity.modules.animation": "1.0.0"
           }
+        },
+        "1.1.1": {
+          "name": "net.m127.animtools.core",
+          "version": "1.1.1",
+          "displayName": "Mega's Animation Tools Core",
+          "description": "Tools to more easily fix up animations.",
+          "unity": "2019.4",
+          "author": {
+            "name": "M127",
+            "email": "Megacrafter127@web.de"
+          },
+          "hideInEditor": false,
+          "keywords": [],
+          "url": "https://github.com/Megacrafter127/UnityAnimationTools.git?path=/net.m127.animtools.core#core_1.1.1",
+          "dependencies": {
+            "com.unity.modules.animation": "1.0.0"
+          }
         }
       }
     },
@@ -61,7 +79,7 @@
             "com.vrchat.base": "https://github.com/vrchat/packages.git?path=/packages/com.vrchat.base#3.0.9"
           },
           "dependencies": {
-            "net.m127.animtools.core": "1.0.0",
+            "net.m127.animtools.core": "1.0.x",
             "com.vrchat.avatars": "3.0.9"
           }
         },
@@ -84,7 +102,7 @@
             "com.vrchat.base": "https://github.com/vrchat/packages.git?path=/packages/com.vrchat.base#3.0.9"
           },
           "dependencies": {
-            "net.m127.animtools.core": "1.0.0",
+            "net.m127.animtools.core": "1.1.x",
             "com.vrchat.avatars": "3.0.9"
           }
         }

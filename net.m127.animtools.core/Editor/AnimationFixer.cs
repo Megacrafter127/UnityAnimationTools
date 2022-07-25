@@ -179,6 +179,10 @@ namespace M127
                         }
                         EditorCurveBinding newBinding = binding;
                         newBinding.path = newpath;
+                        if(AnimationUtility.GetEditorCurve(clip, newBinding) != null)
+                        {
+                            if (!EditorUtility.DisplayDialog("Already in use", "Reference is already in use.\nOverwrite?", "Yes", "No")) continue;
+                        }
                         AnimationCurve curve = AnimationUtility.GetEditorCurve(clip, binding);
                         AnimationUtility.SetEditorCurve(clip, newBinding, curve);
                         AnimationUtility.SetEditorCurve(clip, binding, null);
@@ -195,6 +199,10 @@ namespace M127
                         }
                         EditorCurveBinding newBinding = binding;
                         newBinding.path = newpath;
+                        if (AnimationUtility.GetObjectReferenceCurve(clip, newBinding) != null)
+                        {
+                            if (!EditorUtility.DisplayDialog("Already in use", "Reference is already in use.\nOverwrite?", "Yes", "No")) continue;
+                        }
                         ObjectReferenceKeyframe[] curve = AnimationUtility.GetObjectReferenceCurve(clip, binding);
                         AnimationUtility.SetObjectReferenceCurve(clip, newBinding, curve);
                         AnimationUtility.SetObjectReferenceCurve(clip, binding, null);
@@ -221,6 +229,10 @@ namespace M127
                         EditorCurveBinding newBinding = binding;
                         newBinding.type = newType;
                         newBinding.propertyName = fieldMap(binding.propertyName);
+                        if (AnimationUtility.GetEditorCurve(clip, newBinding) != null)
+                        {
+                            if (!EditorUtility.DisplayDialog("Already in use", "Reference is already in use.\nOverwrite?", "Yes", "No")) continue;
+                        }
                         AnimationCurve curve = AnimationUtility.GetEditorCurve(clip, binding);
                         AnimationUtility.SetEditorCurve(clip, newBinding, curve);
                         AnimationUtility.SetEditorCurve(clip, binding, null);
@@ -238,6 +250,10 @@ namespace M127
                         EditorCurveBinding newBinding = binding;
                         newBinding.type = newType;
                         newBinding.propertyName = fieldMap(binding.propertyName);
+                        if (AnimationUtility.GetObjectReferenceCurve(clip, newBinding) != null)
+                        {
+                            if (!EditorUtility.DisplayDialog("Already in use", "Reference is already in use.\nOverwrite?", "Yes", "No")) continue;
+                        }
                         ObjectReferenceKeyframe[] curve = AnimationUtility.GetObjectReferenceCurve(clip, binding);
                         AnimationUtility.SetObjectReferenceCurve(clip, newBinding, curve);
                         AnimationUtility.SetObjectReferenceCurve(clip, binding, null);

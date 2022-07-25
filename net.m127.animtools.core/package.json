@@ -1,6 +1,6 @@
 {
   "name": "net.m127.animtools.core",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "displayName": "Mega's Animation Tools Core",
   "description": "Tools to more easily fix up animations.",
   "unity": "2019.4",
