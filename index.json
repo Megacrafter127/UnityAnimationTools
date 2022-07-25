@@ -1,7 +1,7 @@
 {
   "name": "Mega's Animation Tools Repository",
   "author": "Megacrafter127",
-  "url": "https://raw.githubusercontent.com/Megacrafter127/UnityAnimationTools/master/index.json",
+  "url": "https://raw.githubusercontent.com/Megacrafter127/UnityAnimationTools/master/index.json?x",
   "packages": {
     "net.m127.animtools.core": {
       "versions": {
