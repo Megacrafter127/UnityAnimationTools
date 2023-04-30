@@ -10,7 +10,7 @@
   },
   "hideInEditor": false,
   "keywords": [],
-  "url": "https://github.com/Megacrafter127/UnityAnimationTools.git?path=/net.m127.animtools.core#1.0.0",
+  "vpmDependencies": {},
   "dependencies": {
     "com.unity.modules.animation": "1.0.0"
   },
