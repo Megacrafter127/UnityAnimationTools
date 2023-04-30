@@ -10,11 +10,10 @@
   },
   "hideInEditor": "false",
   "keywords": [],
-  "url": "https://github.com/Megacrafter127/UnityAnimationTools.git?path=/net.m127.animtools.vrc#1.0.0",
-  "gitDependencies":{
-    "net.m127.animtools.core": "https://github.com/Megacrafter127/UnityAnimationTools.git?path=/net.m127.animtools.core#1.0.0",
-    "com.vrchat.avatars": "https://github.com/vrchat/packages.git?path=/packages/com.vrchat.avatars#3.0.9",
-    "com.vrchat.base": "https://github.com/vrchat/packages.git?path=/packages/com.vrchat.base#3.0.9"
+  "vpmDependencies":{
+    "net.m127.animtools.core": "1.x.x",
+    "com.vrchat.avatars": "3.x.x",
+    "com.vrchat.base": "3.x.x"
   },
   "dependencies": {
     "net.m127.animtools.core": "1.0.0",
