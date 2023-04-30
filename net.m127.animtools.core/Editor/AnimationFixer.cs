@@ -8,38 +8,6 @@ namespace M127
 {
     public class AnimationFixer : EditorWindow
     {
-        public static T Identity<T>(T t)
-        {
-            return t;
-        }
-
-        private static readonly Dictionary<Type, (Type, Func<string, string>)> replacements = new Dictionary<Type, (Type, Func<string, string>)>
-        {
-            [typeof(SkinnedMeshRenderer)] = (typeof(MeshRenderer), Identity),
-            [typeof(MeshRenderer)] = (typeof(SkinnedMeshRenderer), Identity)
-        };
-
-        public delegate IEnumerable<AnimationClip> ClipGetter(GameObject rootObject);
-
-        private static readonly ISet<ClipGetter> clipGetters = new HashSet<ClipGetter>
-        {
-            AnimationUtility.GetAnimationClips
-        };
-        private static readonly ISet<string> extensions = new HashSet<string>();
-
-        public static void RegisterExtension(string notif, IDictionary<Type, (Type, Func<string, string>)> replacements, ClipGetter clipGetter)
-        {
-            if (notif != null) extensions.Add(notif);
-            if (replacements != null)
-            {
-                foreach (KeyValuePair<Type, (Type, Func<string, string>)> entry in replacements)
-                {
-                    AnimationFixer.replacements[entry.Key] = entry.Value;
-                }
-            }
-            if (clipGetter != null) clipGetters.Add(clipGetter);
-        }
-
         [MenuItem("Tools/M127/AnimationFixer")]
         public static void MenuClick()
         {
@@ -65,9 +33,9 @@ namespace M127
             if (hdr)
             {
                 hdrscroll = EditorGUILayout.BeginScrollView(scroll, GUILayout.ExpandHeight(false));
-                foreach (string notif in extensions)
+                foreach (Plugin plug in Plugins.plugins)
                 {
-                    EditorGUILayout.HelpBox(notif, MessageType.None);
+                    EditorGUILayout.HelpBox(plug.Name, MessageType.None);
                 }
                 EditorGUILayout.EndScrollView();
                 EditorGUILayout.Separator();
@@ -79,7 +47,7 @@ namespace M127
                 return;
             }
             ISet<AnimationClip> clips = new HashSet<AnimationClip>();
-            foreach (ClipGetter getter in clipGetters)
+            foreach (Plugin.ClipGetter getter in Plugins.clipGetters)
             {
                 clips.UnionWith(getter(root));
             }
@@ -151,7 +119,7 @@ namespace M127
                 {
                     foreach (Type t in entry.Value)
                     {
-                        if (replacements.TryGetValue(t, out (Type type, Func<string,string> map) t2))
+                        if (Plugins.bindingReplacements.TryGetValue(t, out (Type type, Func<string,string> map) t2))
                         {
                             EditorGUILayout.SelectableLabel($"{entry.Key} : {t}");
                             if (GUILayout.Button($"To {t2}")) ChangeType(clips, entry.Key, t, t2.type, t2.map);
